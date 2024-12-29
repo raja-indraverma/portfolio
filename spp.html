@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="styleProjects.css">
+</head>
+<body>
+    <div class="container">
+        <section>
+            <h1>Candlestick Pattern Detection</h1>
+            <a href="https://github.com/raja-indraverma/stock-pattern-detection" target="_blank">GitHub Link</a><br>
+            This application utilizes cutting-edge technology to detect candlestick patterns in financial charts. It integrates YOLOv8 for object detection, Selenium for web automation, and Twilio for notification services. Below is a detailed breakdown of its technical implementation:
+            <img src="assets/pattern2.png">
+            <div>
+                <h3>1. YOLOv8 Model:</h3>
+                <p>
+                    <strong>Pretrained Model:</strong> The YOLOv8 model, fine-tuned for candlestick patterns, is loaded using the <code>ultralyticsplus</code> library.
+                </p>
+                <ul>
+                    <li>Confidence threshold: 0.25</li>
+                    <li>IoU threshold: 0.45</li>
+                    <li>Maximum detections: 1000</li>
+                </ul>
+
+                <h3>2. Web Browser Automation:</h3>
+                <p>
+                    Selenium with ChromeDriver automates the loading of financial charts from TradingView. Screenshots of the browser window are captured for analysis.
+                </p>
+
+                <h3>3. Real-Time Image Processing:</h3>
+                <ul>
+                    <li>Browser screenshots are converted into NumPy arrays for model inference.</li>
+                    <li>YOLOv8 processes these images to identify candlestick patterns.</li>
+                </ul>
+
+                <h3>4. Result Visualization:</h3>
+                <p>
+                    Detected patterns are overlaid on the original images using YOLO's utilities. The annotated frames are displayed in real-time with OpenCV.
+                </p>
+
+                <h3>5. Notification System:</h3>
+                <ul>
+                    <li><strong>WhatsApp Integration:</strong> Sends alerts to the user with Twilio's API.</li>
+                    <li><strong>Sound Notifications:</strong> Alerts via system sound (Windows only).</li>
+                </ul>
+
+                
+
+                <h3>Key Technical Components:</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Technology/Library</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Object Detection</td>
+                            <td>YOLOv8</td>
+                            <td>Candlestick pattern recognition</td>
+                        </tr>
+                        <tr>
+                            <td>Browser Automation</td>
+                            <td>Selenium</td>
+                            <td>Loading and capturing chart screenshots</td>
+                        </tr>
+                        <tr>
+                            <td>Image Processing</td>
+                            <td>OpenCV, NumPy</td>
+                            <td>Preparing images for inference</td>
+                        </tr>
+                        <tr>
+                            <td>Notifications</td>
+                            <td>Twilio</td>
+                            <td>WhatsApp alerts for detected patterns</td>
+                        </tr>
+                        <tr>
+                            <td>Environment Management</td>
+                            <td>Python, .env</td>
+                            <td>Configuring API keys and environmental variables</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Potential Applications:</strong> Real-time trading analysis, educational tools for learning technical analysis, and market pattern recognition.</p>
+            </div>
+        </section>
+
+        <footer>
+            <a href="index.html">Back to Home</a>
+        </footer>
+    </div>
+</body>
+</html>
